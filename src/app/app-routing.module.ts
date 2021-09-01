@@ -7,7 +7,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 const routes: Routes = [
   { path : '', redirectTo : 'entrar', pathMatch :'full'},
   {path: 'entrar', component : EntrarComponent},
-  {path : 'cadastrar' , component :CadastrarComponent},
+  {path : 'cadastrar' , component : CadastrarComponent},
   {path : 'sobre-nos' , component: SobreNosComponent}
 ];
 
