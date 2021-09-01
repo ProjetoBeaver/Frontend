@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { InicioComponent } from './inicio/inicio.component';
+
 
 const routes: Routes = [
   { path : '', redirectTo : 'entrar', pathMatch :'full'},
   {path: 'entrar', component : EntrarComponent},
   {path : 'cadastrar' , component : CadastrarComponent},
+  {path: 'inicio', component : InicioComponent},
   {path : 'sobre-nos' , component: SobreNosComponent}
 ];
 
