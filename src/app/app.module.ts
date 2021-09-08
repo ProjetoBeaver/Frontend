@@ -9,6 +9,13 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaComponent } from './tema/tema.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +24,24 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    InicioComponent,
+    TemaEditComponent,
+    TemaComponent,
+    PostagemEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [{
+    provide : LocationStrategy,
+    useClass : HashLocationStrategy
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
