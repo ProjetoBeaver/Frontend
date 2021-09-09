@@ -30,5 +30,10 @@ export class TemaService {
   putTema(tema : Tema) : Observable<Tema>{
     return this.http.put<Tema>('https://projetobeaver.herokuapp.com/temas', tema, this.token)
   }
+  
+  deleteTema(id : number){
+    return this.http.delete(`https://projetobeaver.herokuapp.com/temas/${id}`, this.token)
+  }
+
 
 }

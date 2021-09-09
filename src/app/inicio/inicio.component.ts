@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -41,6 +42,8 @@ export class InicioComponent implements OnInit {
       alert('Sua seção expirou, faça o login novamente')
       this.router.navigate(['/entrar'])
     }
+
+    this.authService.refreshToken()
 
     this.getAllTemas()
     this.getAllPostagens()

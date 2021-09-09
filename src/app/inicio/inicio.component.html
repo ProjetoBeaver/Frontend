@@ -31,15 +31,16 @@
     <nav>
       <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens-home" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
-        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</a>
-        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-temaPostagem-tab" data-toggle="tab" href="#nav-temaPostagem" role="tab" aria-controls="nav-temaPostagem" aria-selected="false">Postagens por Tema</a>
+        <a (click)="findByIdUsuario()" 
+        class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</a>
+        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab" href="#nav-postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por Tema</a>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-content mt-5" id="myTabContent">
 
         <!-- Todas as Postagens  -->
-        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+        <div class="tab-pane fade show active" id="todasPostagens-home" role="tabpanel" aria-labelledby="nav-todasPostagens">
           <div class="card-columns">
             <div class="card text-center" *ngFor='let item of listaPostagens'>
               <div class="card-body">
@@ -55,9 +56,9 @@
         </div>
 
 <!-- Minhas Postagens  -->
-          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+          <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens">
             <div class="card-columns">
-              <div class="text-center" *ngFor='let post of usuario.postagem'>
+              <div class="card text-center" *ngFor='let post of usuario.postagem'>
                <div class="card-body">
                  <h5 class="card-title m0">{{post.titulo}}</h5>
                  <small class="text-muted">Tema: {{post.tema.descricao}}</small>
@@ -75,9 +76,9 @@
       </div>
 
   <!-- Postagens tema -->
-          <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
+          <div class="tab-pane fade" id="nav-postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema">
             <div class="card-columns" *ngFor='let tema of listaTemas'>
-              <div class="text-center" *ngFor='let post of tema.postagem'>
+              <div class="card text-center" *ngFor='let post of tema.postagem'>
                <div class="card-body">
                  <h5 class="card-title m0">{{post.titulo}}</h5>
                  <!-- <small class="text-muted">Tema: {{post.tema.descricao}}</small> -->
