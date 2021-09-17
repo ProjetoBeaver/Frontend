@@ -28,6 +28,10 @@ export class AuthService {
   getByIdUsuario(id: number): Observable<Usuario>{ 
     return this.http.get<Usuario>(`https://projetobeaver.herokuapp.com/usuarios/${id}`, this.token)
   }
+  
+  putUsuario(usuario:Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://projetobeaver.herokuapp.com/usuarios/alterar', usuario, this.token)
+  }
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin> ('https://projetobeaver.herokuapp.com/usuarios/logar', usuarioLogin)

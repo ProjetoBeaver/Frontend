@@ -19,6 +19,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { HomeComponent } from './home/home.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     PostagemEditComponent,
     TemaDeleteComponent,
     PostagemDeleteComponent,
-    HomeComponent
+    HomeComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

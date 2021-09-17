@@ -8,16 +8,24 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
             <li class="nav-item active">
-                <img src= "{{foto}}" alt="Imagem user" width="50px" height="50px" class="img-fluid rounded-circle">
+                <img src= "{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
                </li>
                <li class="nav-item pl-3">
-                 <p class="m-0 font-weight-bold text-white fs-16"> Olá,{{nome}} </p>
+                   
+                 <p class="m-0 font-weight-bold text-white fs-16"> Olá, {{nome}} </p>
                </li>
-               <li class="nav-item pl-3">
-                   <a href="">
+               <!-- <li class="nav-item pl-3">
+                   <a >
                     <p class="m-0 text-white fs-16"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
                 </a>
-            </li>
+            </li> -->
+            <li  class="nav-item pl-3">
+                <a [routerLink]="['/usuario-edit', id]">
+                  <p class="fs-16 text-white m-0">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  </p>
+                </a>
+              </li>
         </ul>
 
         <ul class="navbar-nav ml-auto d-flex align-items-center">
