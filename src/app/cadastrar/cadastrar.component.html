@@ -33,13 +33,14 @@
           
     </div>
 </nav>
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row">
-        <div class="col-md-6" id="img-bg"></div>
-
-        <div class="col-md-6 mt-5 mb-5">
-            <div class="row d-flex justify-content-center ">
-                <div class="col-md-10">
+    
+        <div class="col-md-4" id="img-bg"></div>
+        <div class="col-md-8 mt-3 mb-3 my-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <!-- <div class="caixaCadastro"> -->
                     <h1 class="text-center cadastro">Cadastro</h1>
                     <div class="form-group">
                         <label for="nome">Nome</label>
@@ -70,11 +71,12 @@
                             <option value="beneficiario">Beneficiário</option>
                             <option value="Instituição">Instituição</option>
                         </select>
-                    </div>
+                    <!-- </div> -->
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn colorbtn2 mr-4 " routerLink = '/entrar'>Cancelar</button>
                         <button type="submit" class="btn colorbtn" (click)='cadastrar()'>Cadastrar</button>
                     </div>
+                </div>
                     <hr>
                     <p class="text-center m-4 cadastro">Já possui login?<a class="linkverdecadastro cadastro2" routerLink="/entrar"> Entre aqui!</a> </p>
                 </div>
