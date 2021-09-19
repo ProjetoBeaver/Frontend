@@ -20,6 +20,7 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { HomeComponent } from './home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     PostagemEditComponent,
     TemaDeleteComponent,
     PostagemDeleteComponent,
-    HomeComponent
+    HomeComponent,
+  
   ],
   imports: [
     BrowserModule,
