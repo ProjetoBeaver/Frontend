@@ -83,3 +83,8 @@ p {
     font-size: 1rem;
     color: #bdc3c7;
 }
+.btnModal {
+    background-color: fafafa;
+    border: none;
+    
+}

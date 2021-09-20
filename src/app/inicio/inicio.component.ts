@@ -30,7 +30,7 @@ export class InicioComponent implements OnInit {
   nome = environment.nome
   foto = environment.foto
   tipo = environment.tipo
-  // usuario = environment.usuario
+  usuarioUsuario = environment.usuario
 
 
   constructor(
