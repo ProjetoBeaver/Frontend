@@ -1,0 +1,213 @@
+<div class="container-fluid bgfundo">
+  <div class="main-body">
+
+    <!-- Breadcrumb -->
+    <!-- <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav> -->
+  </div>
+
+  <div class="container">
+    <div class="row">
+      
+      <!-- primeira coluna -->
+      <div class="col-3">
+        <div class="card text-light py-3">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img src="{{foto}}" alt="Admin" class="rounded-circle" width="150">
+            <div class="mt-3">
+              <h4 class="text-dark">{{nome}}</h4>
+              <p>{{tipo}}</p>
+              <hr>                       
+                  <h6 class=" text-dark">Bio</h6>            
+                                         
+                  <p >Ajudando a construir um mundo melhor!</p>
+                              
+               <button class="btn botaoSeguir px-3 mr-2">Follow</button>
+              <button class="btn botaoMsg">Message</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- contato -->
+        <div class="card mt-3">
+          <ul class="list-group list-group-flush">
+            <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"> -->
+              <h6 class="mt-3 mb-0 d-flex justify-content-center "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline d-flex justify-content-center "><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+              
+              <p class="text-secondary d-flex justify-content-center">www.seusiteaqui.com</p>
+            <!-- </li> -->
+            <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+              <span class="text-secondary">{{link}}</span>
+            </li> -->
+            <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"> -->
+              <h6 class="mb-0 d-flex justify-content-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary d-flex justify-content-center"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Email</h6>
+              <p class="text-secondary d-flex justify-content-center">{{usuarioUsuario}}</p>
+            <!-- </li> -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- segunda coluna -->
+      <!-- criar postagem -->
+      <div class="col-6 ">
+        <div class="card text-light py-3">
+         
+            <div class="row d-flex">
+              <div class="col-12 d-flex">
+                <img src="{{foto}}" alt="Admin" class="rounded-circle ml-3" width="50">
+                <button type="button" class="btnModal text-secondary ml-3 pr-5 rounded text-center" data-toggle="modal"
+                  data-target="#novaPostagem">O que você está fazendo para criar um mundo melhor?</button>
+              </div>
+            </div>
+            <hr>
+            
+             <!-- Menu Postagens  -->
+       
+      
+          <ul class="nav d-flex justify-content-center mb-3 mt-3  " id="pills-tab" role="tablist">
+            <li class="nav-item  ">
+              <a class="nav-link active btnEntrar mr-3 " id="pills-todasPostagens-tab" data-toggle="pill" href="#pills-todasPostagens" role="tab" aria-controls="pills-todasPostagens" aria-selected="true">Todos os Posts</a>
+            </li>
+            <li class="nav-item">
+              <a (click)="findByIdUsuario()" class="nav-link btnEntrar mr-3" id="pills-minhasPostagens-tab" data-toggle="pill" href="#pills-minhasPostagens" role="tab" aria-controls="pills-minhasPostagens" aria-selected="false">Meus Posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btnEntrar mr-3" id="pills-temaPostagem-tab" data-toggle="pill" href="#pills-temaPostagem" role="tab" aria-controls="pills-temaPostagem" aria-selected="false">Posts por Tema</a>
+            </li>
+          </ul>
+      <hr>
+          <!-- Exibindo Postagens -->
+  
+          <div class="tab-content text-color" id="pills-tabContent">
+  
+            <!-- Todas as Postagens -->
+            <div class="tab-pane fade show active" id="pills-todasPostagens" role="tabpanel" aria-labelledby="pills-todasPostagens-tab">
+              <!-- inicio Card -->
+                <div class="card text-center w-90" *ngFor='let item of listaPostagens'>
+                  <div class="card-body">
+                    
+                    <div class="d-flex flex-row bd-highlight mb-3 ">
+                      <img class="rounded-circle p-2 bd-highlight" src="{{item.usuario.foto}}"  alt="Imagem do Usuário" width="50px"
+                        height="50px" class="rounded-circle">
+                        <div class="d-flex align-items-center">
+                        <h4 class="text-dark ml-3 mt-2">{{item.usuario.nome}}</h4>
+                        <p class=" text-dark ml-3 mt-3"> - {{tipo}}</p>
+                      </div>
+                    </div>
+                    <h5 class="card-title m-0">{{item.titulo}}</h5>
+                    <p class="card-text mt-3">{{item.texto}}.</p>
+                    <small class="text-muted tema-alin"> Tema: {{item.tema.descricao}}</small>
+                    <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
+                    
+                    
+                  </div>
+              </div> 
+              <!-- fim card -->
+            </div>
+  
+  
+            <!-- Minhas Postagens -->
+            <div class="tab-pane fade" id="pills-minhasPostagens" role="tabpanel" aria-labelledby="pills-minhasPostagens-tab">
+              <!-- inicio cards -->
+              <div class="card text-center" *ngFor='let post of usuario.postagem'>
+                <div class="card-body">
+                  <h5 class="card-title m0">{{post.titulo}}</h5>
+                  <p class="card-text">{{post.texto}}</p>
+                  <small class="text-muted">Tema: {{post.tema.descricao}}</small>
+                  <p class="card-text"><small class="text-muted">{{post.date | date: 'dd/MM/yyy'}} às {{post.date | date: 'HH:mm'}}</small></p>
+  
+                  <a [routerLink]="['/postagem-edit', post.id]" class="text-info mr-3" href="">Editar</a>
+                  <a [routerLink]="['/postagem-delete', post.id]" class="text-danger" href="">Apagar</a>
+  
+                </div>
+               </div>
+              <!-- fim card -->
+            </div>
+  
+  
+            <!-- Postagens por Tema -->
+            <div class="tab-pane fade" id="pills-temaPostagem" role="tabpanel" aria-labelledby="pills-temaPostagem-tab">
+              <!-- inicio card -->
+              <div  *ngFor='let tema of listaTemas'>
+                <div class="card text-center" *ngFor='let post of tema.postagem'>
+                 <div class="card-body">
+                   <h5 class="card-title m-0">{{post.titulo}}</h5>
+                   <!-- <small class="text-muted">Tema: {{post.tema.descricao}}</small> -->
+                   <p class="card-text mt-3">{{post.texto}}</p>
+                   <p class="card-text"><small class="text-muted">{{post.date | date: 'dd/MM/yyy'}} às {{post.date | date: 'HH:mm'}}</small></p>
+                 </div>
+                </div>
+              </div>
+              <!-- fim card -->
+            </div>
+  
+          </div>
+        </div>
+    </div>
+      
+
+      <!-- terceira coluna: propaganda + outros voluntários e ONGs  -->
+       <div class="col-3">
+          <div class="card text-light py-3">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="https://imgur.com/rDFSl5K.png" alt="Admin" class="col-12 rounded" width="150">
+              <div class="mt-3">
+                <h5 class="text-dark">Voluntários</h5>
+                <p>{{tipo}}</p>
+  
+                <hr>
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <div class="mt-1">
+                      <h5 class="text-dark">ONGs</h5>
+                      <p>{{tipo}}</p>
+                  </div>
+                </div>
+  
+               
+              </div>
+            </div>
+          </div> 
+        <!-- termina aqui -->
+ <!-- Modal -->
+ <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o Título">
+        </div>
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="titulo">Escolha um Tema ou <a routerLink = "/tema" data-dismiss="modal">cadastre um novo </a>: </label>
+          <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+            <option *ngFor='let tema of listaTemas' value="{{tema.id}}">
+             {{tema.descricao}}
+            </option></select>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btnCancelar" data-dismiss="modal">Cancelar</button>
+        <button (click)='publicar()' data-dismiss="modal" type="button"
+          class="btn btnPublicar">Publicar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
